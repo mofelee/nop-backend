@@ -5,9 +5,9 @@
   "keywords": [],
   "author": "Mofe Lee < mofe@me.com >",
   "license": "MIT",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "koa": "^1.1.2",
     "koa-router": "^7.0.0"
   }
 }

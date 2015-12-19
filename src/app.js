@@ -1,15 +1,21 @@
-const app = require('koa')();
+const koa = require('koa');
+const app = koa();
 
-app.use(async (ctx, next) => {
-  const start = new Date;
-  await next();
-  const ms = new Date - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+// logger
+
+app.use(function*(next) {
+  const start = new Date();
+
+  yield next;
+  const ms = new Date() - start;
+
+  console.log('%s %s - %s', this.method, this.url, ms);
 });
 
-app.use(ctx => {
-  ctx.body = 'Hello World';
+// response
+
+app.use(function*() {
+  this.body = 'Hello World';
 });
 
-const port = process.env.PORT || 6060;
-app.listen(port, () => console.log(`✅  Listening on port ${port}...`));
+app.listen(3000);
