@@ -1,0 +1,40 @@
+// 复制此文件并重命名为config.js
+
+var config = {};
+
+config['development'] = {
+  // 使用knex，此为knex的设置
+  mysql: {
+    client: 'mysql',
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'nop',
+    pool: {
+      min: 0,
+      max: 10
+    }
+  }
+}
+
+config['test'] = {
+  // 使用knex，此为knex的设置
+  mysql: {
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'nop',
+    pool: {
+      min: 0,
+      max: 10
+    }
+  }
+}
+
+config['production'] = {}
+
+module.exports.getConfig = function(){
+  const env = process.env.NODE_ENV || 'development';
+
+  return config[env];
+}
