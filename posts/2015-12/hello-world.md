@@ -1,6 +1,6 @@
 ---
-title: Hello World
-date: 2015-12-28
+title: 测试中文Hello World
+date: 2015-12-27T10:00+0800
 ---
 Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
