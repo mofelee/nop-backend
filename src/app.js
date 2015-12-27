@@ -1,21 +1,18 @@
+'use strict';
 const koa = require('koa');
 const app = koa();
 
-// logger
+const libs = require('./libs');
 
-app.use(function*(next) {
-  const start = new Date();
+app.use(libs.koaFavicon());
+app.use(libs.koaLogger());
+app.use(libs.koaResponseTime());
+app.use(libs.koaCompress());
+app.use(libs.koaBodyParser());
 
-  yield next;
-  const ms = new Date() - start;
-
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
-
-// response
-
-app.use(function*() {
-  this.body = 'Hello World!';
-});
+require('./api')(app);
 
 app.listen(3000);
+console.log('listening on port 3000');
+
+module.exports = app;

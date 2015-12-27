@@ -5,7 +5,7 @@ exports.up = function(knex) {
     table.increments();
     table.string('title').notNullable();
     table.string('link').notNullable();
-    table.text('detail').notNullable();
+    table.text('content').notNullable();
     table.timestamps();
   });
 };

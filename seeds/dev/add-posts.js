@@ -11,6 +11,7 @@ exports.seed = function(knex) {
 
     yield knex('posts').del();
     posts = Promise.map(posts, function(post){
+      // 标题转拼音
       let link = pinyin(post.attributes.title, {
         style: pinyin.STYLE_NORMAL
       }).join('-');
@@ -20,7 +21,7 @@ exports.seed = function(knex) {
       return knex('posts').insert({
         title: post.attributes.title,
         link: link,
-        detail: post.body,
+        content: post.body,
         'created_at': moment(post.attributes.date).toDate()
       });
     });
