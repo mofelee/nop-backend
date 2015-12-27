@@ -1,4 +1,4 @@
-// Update with your config settings.
+'use strict';
 
 module.exports = {
   development: {
@@ -6,12 +6,15 @@ module.exports = {
     connection: {
       host     : '127.0.0.1',
       user     : 'root',
-      password : '',
+      password : 'abc123',
       database : 'nop'
     },
     debug: true,
     migrations: {
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: './seeds/dev'
     }
   },
 
@@ -24,6 +27,9 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: './seeds/test'
     }
   },
 
@@ -36,6 +42,9 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: './seeds/prod'
     }
   }
 
