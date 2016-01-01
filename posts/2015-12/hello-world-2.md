@@ -1,6 +1,7 @@
 ---
+uuid: b198296d-8ce0-49bd-965b-aec2febd818d
 title: Hello World
-date: 2015-12-28T10:00+0800
+date: 2016-01-01T00:15:53+08:00
 ---
 Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

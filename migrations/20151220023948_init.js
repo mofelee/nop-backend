@@ -3,6 +3,7 @@
 exports.up = function(knex) {
   return knex.schema.createTableIfNotExists('posts', function(table) {
     table.increments();
+    table.string('uuid').notNullable();
     table.string('title').notNullable();
     table.string('link').notNullable();
     table.text('content').notNullable();

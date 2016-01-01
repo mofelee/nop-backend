@@ -1,4 +1,5 @@
 ---
+uuid: c0698d3b-6dfd-4b94-a282-1bac6562e3ee
 title: 测试中文Hello World
 date: 2015-12-27T10:00+0800
 ---
