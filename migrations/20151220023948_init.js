@@ -7,6 +7,8 @@ exports.up = function(knex) {
     table.string('title').notNullable();
     table.string('link').notNullable();
     table.text('content').notNullable();
+    table.string('hash').notNullable();
+    table.dateTime('post_created_at');
     table.timestamps();
   });
 };

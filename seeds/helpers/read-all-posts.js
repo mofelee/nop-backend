@@ -1,5 +1,5 @@
 'use strict';
-
+const crypto = require('crypto');
 const co = require('co');
 const Promise = require('bluebird');
 const fm = require('front-matter');
@@ -22,7 +22,10 @@ const postContents = co(function*() {
     });
 
     files = Promise.map(files, function(data){
-      return fm(data);
+      const file = fm(data);
+
+      file.attributes.hash = crypto.createHash('md5').update(data).digest('hex');
+      return file;
     });
     // files = yield files;
   } catch (err) {
